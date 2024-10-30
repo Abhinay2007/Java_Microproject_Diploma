@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEB Design Video Library</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>WEB Design Video Library</h1>
+    <p>Select a category to find relevant videos</p>
+  </header>
+  
+  <div class="filter-buttons">
+    <button onclick="filterVideos('all')">All</button>
+    <button onclick="filterVideos('introduction')">Introduction</button>
+    <button onclick="filterVideos('beginner')">Beginner</button>
+    <button onclick="filterVideos('intermediate')">Intermediate</button>
+    <button onclick="filterVideos('advanced')">Advanced</button>
+  </div>
+
+  <section id="video-gallery">
+    <div class="video-item introduction">
+      <h3>Introduction to the Course</h3>
+      <video controls>
+        <source src="Html1.mp4" type="video/mp4">
+      </video>
+    </div>
+    
+    <div class="video-item beginner">
+      <h3>Beginner Lesson 1</h3>
+      <video controls>
+        <source src="Html2.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="video-item intermediate">
+      <h3>Intermediate Lesson 1</h3>
+      <video controls>
+        <source src="Html3.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="video-item advanced">
+      <h3>Advanced Lesson 1</h3>
+      <video controls>
+        <source src="Html4.mp4" type="video/mp4">
+      </video>
+    </div>
+    
+    <!-- Add more videos as needed -->
+  </section>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+
