@@ -67,12 +67,16 @@ public class SignUpServlet extends HttpServlet {
             {
           
                     
-                PreparedStatement ps =c.prepareStatement("insert into abhinay.login values(?,?,?,?,?);");
+                PreparedStatement ps =c.prepareStatement("insert into abhinay.login values(?,?,?,?,?,?,?,?);");
                 ps.setString(1, user);
                 ps.setString(2, pass);
                 ps.setString(3, na);
                 ps.setString(4, phno);
                 ps.setString(5, em);
+                ps.setInt(6, 0);
+                ps.setInt(7, 0);
+                ps.setInt(8, 0);
+                
                 ps.executeUpdate();
                 RequestDispatcher rd=request.getRequestDispatcher("login.jsp");
                 rd.forward(request, response);    
