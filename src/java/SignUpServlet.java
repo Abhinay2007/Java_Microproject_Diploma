@@ -78,6 +78,7 @@ public class SignUpServlet extends HttpServlet {
                 ps.setInt(8, 0);
                 
                 ps.executeUpdate();
+                System.out.print("Done");
                 RequestDispatcher rd=request.getRequestDispatcher("login.jsp");
                 rd.forward(request, response);    
             }    
