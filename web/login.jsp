@@ -95,6 +95,22 @@
             <input type="text" name="txtname" placeholder="Username" required>
             <input type="password" name="txtPwd" placeholder="Password" required>
             <a href="#">Forget Password?</a><br><br>
+            <%      int a=0;
+              try{
+                    a= (int) getServletContext().getAttribute("a");
+                 }catch(Exception e){
+                    System.out.println(e);
+                 }    
+                    if(a == 1){ 
+                     a=0;
+            %>        
+            <script>
+              alert("Login failed  !!!!!!!!!\n"+"Try again");                 
+            </script>
+                
+            <%    
+                }
+            %>
             <button type="submit">Login</button>
         </form>
         <form action="#" method="post">

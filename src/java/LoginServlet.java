@@ -22,7 +22,7 @@ import java.util.logging.Logger;
  */
 @WebServlet(urlPatterns = {"/LoginServlet"})
 public class LoginServlet extends HttpServlet {
-
+   int a=0;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -51,9 +51,13 @@ public class LoginServlet extends HttpServlet {
             RequestDispatcher rd=request.getRequestDispatcher("home.jsp");
             rd.forward(request, response);            
         }
-        else{
-           out.println("<font color=red size=18>Login fail<br>");
-           out.println("<a href=login.jsp>try again."); 
+        else{  
+            a=1;
+            getServletContext().setAttribute("a", a);
+            RequestDispatcher rd=request.getRequestDispatcher("login.jsp");
+            rd.forward(request, response);     
+//           out.println("<font color=red size=18>Login fail<br>");
+//          out.println("<a href=login.jsp>try again."); 
         }
         
         }

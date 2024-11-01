@@ -23,6 +23,7 @@ import java.util.logging.Logger;
  */
 @WebServlet(urlPatterns = {"/SignUpServlet"})
 public class SignUpServlet extends HttpServlet {
+    int a=0;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -53,15 +54,24 @@ public class SignUpServlet extends HttpServlet {
 
             if( pass.equals(cpass) != true)
             {    
+                  a=1;
+                  getServletContext().setAttribute("a", a);
+                  RequestDispatcher rd=request.getRequestDispatcher("SignUp.jsp");
+                  rd.forward(request, response);
                  
-               out.println("<script type=\"text/javascript\">\n" +
-                           "    var msg = \"Confirm password not match. Pleace try again!!!!!!!!!!! Go back\";\n" +
-                           "    alert(msg);\n" + "</script>");              
+//               out.println("<script type=\"text/javascript\">\n" +
+//                           "    var msg = \"Confirm password not match. Pleace try again!!!!!!!!!!! Go back\";\n" +
+//                           "    alert(msg);\n" + "</script>");              
             }
             else if(rs.next()){
-               out.println("<script type=\"text/javascript\">\n" +
-                           "    var msg = \"Username already register. Pleace get different Username!!!!!!!!!!! Go back\";\n" +
-                           "    alert(msg);\n" + "</script>");  
+                 a=2;
+                  getServletContext().setAttribute("a", a);
+                  RequestDispatcher rd=request.getRequestDispatcher("SignUp.jsp");
+                  rd.forward(request, response);
+                
+//               out.println("<script type=\"text/javascript\">\n" +
+//                           "    var msg = \"Username already register. Pleace get different Username!!!!!!!!!!! Go back\";\n" +
+//                           "    alert(msg);\n" + "</script>");  
             }
             else
             {

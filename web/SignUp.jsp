@@ -92,8 +92,30 @@
               <input type="text" name="usname" placeholder="Username" required>
               <input type="password" name="pwd" placeholder="Password" required>
               <input type="password" name="cpwd" placeholder="Confirm Password" required>
-             
-      
+             <%      int a=0;
+              try{
+                    a= (int) getServletContext().getAttribute("a");
+                 }catch(Exception e){
+                    System.out.println(e);
+                 }    
+                    if(a == 1){ 
+                     a=0;
+            %>   
+            <script>
+                 alert("Confirm password not match !!!!!!!!!!!\n"+"Try again");         
+            </script>
+            <%    
+                }       
+                    if(a == 2){ 
+                     a=0;
+            %>   
+            <script>
+                 alert("Username already register.get different Username!!!!!!!!!!!\n"+"Try again");         
+            </script>
+            <%    
+                }
+            %>
+            
               <button type="submit">Sign Up</button>
       </form>
       
